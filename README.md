@@ -1,4 +1,6 @@
-# node-red-ros-nodes
+# node-red-contrib-ros2
+
+Based on [node-red-contrib-flowake-ros-nodes](https://gitlab.com/flowake/node-red-ros-nodes)
 
 This is a Node-RED implementation for connecting to ROS bridge.
 It is based on roslibjs, the standard ROS Javascript for ROS bridge library. https://github.com/RobotWebTools/roslibjs and on the
