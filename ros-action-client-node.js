@@ -28,7 +28,8 @@ module.exports = function (RED) {
       });
   
       goal.on('result', function (result) {
-        node.send([, {payload: result}]);
+        msg.payload = result;
+        node.send([, msg]);
       });
       
       goal.send();

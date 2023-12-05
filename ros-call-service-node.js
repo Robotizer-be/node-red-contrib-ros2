@@ -19,7 +19,8 @@ module.exports = function (RED) {
       //console.log(msg.payload);
       serviceClient.ros = node.server.ros;
       serviceClient.callService(msg.payload, function (result) {
-        node.send({ payload: result });
+        msg.payload = result;
+        node.send(msg);
       });
     });
 
