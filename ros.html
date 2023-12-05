@@ -1,0 +1,230 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ros-subscribe', {
+        category: 'ros',
+        color: '#fef5ff',
+        defaults: {
+            server: { type: "ros-server" },
+            topicname: { value: "" }
+        },
+        inputs: 0,
+        outputs: 1,
+        paletteLabel: 'ros sub',
+        icon: "icon.png",
+        label: function () {
+            return this.topicname || "ros subscribe";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ros-subscribe">
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-user"></i> ROS Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topicname"><i class="icon-tag"></i> Topic</label>
+        <input type="text" id="node-input-topicname" placeholder="/mytopic">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ros-publish', {
+        category: 'ros',
+        color: '#fef5ff',
+        defaults: {
+            server: { type: "ros-server" },
+            topicname: { value: "" },
+            msgtype: { value: "std_msgs/String" }
+        },
+        inputs: 1,
+        outputs: 0,
+        align: 'right',
+        paletteLabel: 'ros pub',
+        icon: "icon.png",
+        label: function () {
+            return this.topicname || "ros publish";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ros-publish">
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-user"></i> ROS Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topicname"><i class="icon-tag"></i> Topic</label>
+        <input type="text" id="node-input-topicname" placeholder="/mytopic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-msgtype"><i class="fa fa-dot-circle-o"></i> Type</label>
+
+        <input type="text" id="node-input-msgtype" placeholder="package/Type">
+    </div>
+</script>
+
+<!-- New -->
+<script type="text/javascript">
+    RED.nodes.registerType('ros-call-service', {
+        category: 'ros',
+        color: '#fef5ff',
+        defaults: {
+            server: { type: "ros-server" },
+            servicename: { value: "" },
+            srvtype: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        align: 'right',
+        paletteLabel: 'ros callSrv',
+        icon: "icon.png",
+        label: function () {
+            return this.servicename || "ros service";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ros-call-service">
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-user"></i> ROS Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-servicename"><i class="icon-tag"></i> Service</label>
+        <input type="text" id="node-input-servicename" placeholder="/myservice">
+    </div>
+    <div class="form-row">
+        <label for="node-input-srvtype"><i class="icon-tag"></i> Type</label>
+        <input type="text" id="node-input-srvtype" placeholder="/myservicetype">
+    </div>
+</script>
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('ros-adv-service', {
+        category: 'ros',
+        color: '#fef5ff',
+        defaults: {
+            server: { type: "ros-server" },
+            servicename: { value: "" },
+            srvtype: { value: "" }
+        },
+        inputs: 0,
+        outputs: 1,
+        align: 'right',
+        paletteLabel: 'ros advSrv',
+        icon: "icon.png",
+        label: function () {
+            return this.servicename || "ros adv_service";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ros-adv-service">
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-user"></i> ROS Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-servicename"><i class="icon-tag"></i> Service</label>
+        <input type="text" id="node-input-servicename" placeholder="/myservice">
+    </div>
+    <div class="form-row">
+        <label for="node-input-srvtype"><i class="icon-tag"></i> Type</label>
+        <input type="text" id="node-input-srvtype" placeholder="/myservicetype">
+    </div>
+</script>
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('ros-resp-service', {
+        category: 'ros',
+        color: '#fef5ff',
+        defaults: {
+            server: { type: "ros-server" },
+            servicename: { value: "" },
+            srvtype: { value: "" }
+        },
+        inputs: 1,
+        outputs: 0,
+        align: 'right',
+        paletteLabel: 'ros respSrv',
+        icon: "icon.png",
+        label: function () {
+            return this.servicename || "ros service";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ros-resp-service">
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-user"></i> ROS Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-servicename"><i class="icon-tag"></i> Service</label>
+        <input type="text" id="node-input-servicename" placeholder="/myservice">
+    </div>
+    <div class="form-row">
+        <label for="node-input-srvtype"><i class="icon-tag"></i> Type</label>
+        <input type="text" id="node-input-srvtype" placeholder="/myservicetype">
+    </div>
+</script>
+
+<!--script type="text/x-red" data-help-name="ros-subscribe">
+    <p>A node that subscribe to ROS bridge websocket server</p>
+</!--script-->
+
+<script type="text/javascript">
+    RED.nodes.registerType('ros-server', {
+        category: 'config',
+        defaults: {
+            url: { value: "ws://ipaddress:9090", required: true }
+        },
+        label: function () {
+            return this.url;
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ros-server">
+    <div class="form-row">
+        <label for="node-config-input-url"><i class="icon-bookmark"></i> Url</label>
+        <input type="text" id="node-config-input-url">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ros-action-client', {
+        category: 'ros',
+        color: '#fef5ff',
+        defaults: {
+            server: { type: "ros-server" },
+            servername: { value: "" },
+            actionname: { value: "" }
+        },
+        inputs: 1,
+        outputs: 2,
+        align: 'right',
+        paletteLabel: 'ros action client',
+        icon: "icon.png",
+        label: function () {
+            return this.servicename || "ros action client";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="ros-action-client">
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-user"></i> ROS Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-servername"><i class="icon-tag"></i> Action Server Name</label>
+        <input type="text" id="node-input-servername" placeholder="/myservername">
+    </div>
+    <div class="form-row">
+        <label for="node-input-actionname"><i class="icon-tag"></i> Action Type Name</label>
+        <input type="text" id="node-input-actionname" placeholder="myactionname">
+    </div>
+</script>

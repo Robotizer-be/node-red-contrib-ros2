@@ -1,0 +1,30 @@
+{
+  "name": "node-red-contrib-flowake-ros-nodes",
+  "version": "1.2.0",
+  "description": "A node-red interface for ROS Bridge",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/flowake/node-red-ros-nodes.git"
+  },
+  "keywords": [
+    "ROS",
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "ros": "ros.js"
+    }
+  },
+  "author": "David Taranta, Francisco Marques",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/flowake/node-red-ros-nodes/issues"
+  },
+  "homepage": "https://gitlab.com/flowake/node-red-ros-nodes#readme",
+  "dependencies": {
+    "roslib": "^1.1.0"
+  }
+}
